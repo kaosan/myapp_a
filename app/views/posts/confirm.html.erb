@@ -1,0 +1,21 @@
+<div class="contants">
+<div class="t_menu">
+
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+<%= image_tag(@post.image.url, class: 'img-responsive center-block') %>
+<%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :content %>
+
+  <p><%= @post.content %></p>
+  <%= form.submit  "登録する", class: 'botton' %>
+<% end %>
+
+<%= form_with(model:@post, url:new_post_path, local:true, method:"get") do |form| %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "戻る", name: "back", class: 'botton' %>
+<% end %>
+</div>
+</div>

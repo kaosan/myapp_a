@@ -1,0 +1,47 @@
+<div class = "container">
+
+<%= form_with(model: @user, local: true ,url: new_or_edit ) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="user_edit" >
+  <%= form.label :名前 %>
+  <%= form.text_field :name %>
+  </div>
+<br>
+<div class="user_edit" >
+  <%= form.label :メールアドレス %>
+  <%= form.email_field :email %>
+  </div>
+<br>
+<div class="user_edit" >
+  <%= form.label :パスワード %>
+  <%= form.password_field :password %>
+  </div>
+<br>
+<div class="user_edit" >
+  <%= form.label :同じパスワードを入力 %>
+  <%= form.password_field :password_confirmation %>
+  </div>
+<br>
+<div class="user_edit" >
+  <div class ="mx-auto" style ="width: 200px;">
+  <%= form.label :ユーザー画像 %>
+  <%= form.file_field :icon %>
+</div>
+</div>
+<br>
+  <%= form.submit "編集", class: 'a_botton' %>
+  <%= link_to "戻る", user_path, class: 'b_botton' %>
+<% end %>
+</div>

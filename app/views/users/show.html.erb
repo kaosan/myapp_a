@@ -1,0 +1,9 @@
+<div class="container">
+<br><%= image_tag @user.icon, class: 'icon' %>
+<h1><%= @user.name %>のページ</h1>
+<p><%= notice %></p>
+<br>
+<li><%= link_to "編集", edit_user_path, class: 'botton' %></li>
+<br>
+<li><%= link_to "お気に入り", favorite_posts_path, class: 'b_botton' %></li>
+</div>

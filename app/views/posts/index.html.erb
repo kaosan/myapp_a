@@ -1,0 +1,29 @@
+<div class="text-center">
+<h1>投稿一覧</h1>
+<p><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-xs-12 col-md-6">
+        <p><%= image_tag post.image, class: 'img-responsive center-block' %></p>
+        <p><%= post.content %></p>
+        <p> 投稿者:<%= post.user.name %></p>
+
+        <span><%= link_to '詳細', post_path(post.id), class:'botton' %></span>
+
+        <% if logged_in? %>
+          <% if post.user_id == current_user.id %>
+            <span><%= link_to '編集', edit_post_path(post.id), data: {confirm: '本当に編集しますか？'}, class: 'botton' %></span>
+            <span><%= link_to '削除', post_path(post.id),method: :delete, data: {confirm: '本当に削除しますか？'}, class:'botton' %></span>
+<br>
+<br>
+<br>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<%= link_to '新しく投稿する', new_post_path, class:'new_image' %>
+</div>

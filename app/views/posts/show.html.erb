@@ -1,0 +1,19 @@
+<div class="contants">
+<div class="t_menu" >
+
+<h1>投稿詳細画面</h1>
+
+<p><%= image_tag @post.image.url, class: 'img-responsive center-block' %></p>
+<p><%= @post.content %></p>
+<% unless @post.user_id == current_user.id %>
+        <% if @favorite_post.present? %>
+          <%= link_to 'お気に入りを削除する', favorite_post_path(id: @favorite_post.id), method: :delete, class:'botton' %>
+        <% else %>
+          <%= link_to 'お気に入り', favorite_posts_path(post_id: @post.id), method: :post, class:'botton' %>
+        <% end %>
+      <% end %>
+      <br>
+
+      <%= link_to "投稿一覧画面に戻る", posts_path, class:'back_show' %>
+</div>
+</div>
