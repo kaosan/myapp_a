@@ -9,5 +9,5 @@ class User < ApplicationRecord
 
   validates :password, presence: true, length: {minimum: 6}
   has_many :favorite_posts, dependent: :destroy
-  has_many :favorite_posts, through: :favorite_posts, source: :post
+  has_many :favorite_post_images, through: :favorite_posts, source: :post
 end

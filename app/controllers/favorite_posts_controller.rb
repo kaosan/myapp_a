@@ -11,7 +11,7 @@ end
 
 def index
   @user = User.find(session[:user_id])
-  @favorite_post_images = @user.favorite_posts
+  @favorites_post_images = @user.favorite_posts
 
 end
 

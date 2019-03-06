@@ -15,7 +15,7 @@ end
 
 def show
   @user = User.find(params[:id])
-  @favorites_post_images = @user.favorite_posts
+  @favorite_posts_images = @user.favorite_posts
 end
 
 def edit
