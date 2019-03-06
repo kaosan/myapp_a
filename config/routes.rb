@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'sessions/new'
 
   resources :contacts
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :posts do
+    resources :comments
     collection do
       post :confirm
     end

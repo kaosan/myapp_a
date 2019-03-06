@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-before_action :logged_in?, only: [:new, :edit, :show, :destroy]
+before_action :logged_in?, only: [:new, :edit, :destroy]
 
 def index
   @posts = Post.all
@@ -27,6 +27,8 @@ end
 
 def show
   @favorite_post = current_user.favorite_posts.find_by(post_id: @post.id)
+  @comments = @post.comments
+  @comment = @post.comments.build
 end
 
 def edit

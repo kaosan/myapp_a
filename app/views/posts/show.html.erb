@@ -13,6 +13,15 @@
         <% end %>
       <% end %>
       <br>
+      <p>コメント一覧</p>
+       <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+       <div id = "comments_area">
+         <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+         <%= render partial: 'comments/index', locals: {comments: @comments, post: @post } %>
+         </div>
+          <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+          <%= render partial: 'comments/form', locals: {comment: @comment, post: @post} %>
+          <p><%= link_to '編集', edit_post_path(@post) %></p>
 
       <%= link_to "投稿一覧画面に戻る", posts_path, class:'back_show' %>
 </div>
