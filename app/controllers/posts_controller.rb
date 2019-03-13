@@ -4,6 +4,7 @@ before_action :logged_in?, only: [:new, :edit, :destroy]
 
 def index
   @posts = Post.all
+  @posts = Post.search(params[:search])
 end
 
 def new
@@ -55,6 +56,10 @@ def confirm
   @post = Post.new(post_params)
   @post.user_id = current_user.id
   render :new if @post.invalid?
+end
+
+def search
+  @posts = Post.search(params[:search])
 end
 
 private

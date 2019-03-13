@@ -7,4 +7,12 @@ class Post < ApplicationRecord
   has_many :favorite_post_users, through: :favorite_posts, source: :user
   has_many :comments, dependent: :destroy
 
+  def self.search(seach)
+    if search
+      Post.where(['content LIKE ?', "%#{search}%"])
+    else
+      Post.all
+    end
+  end
+
 end
