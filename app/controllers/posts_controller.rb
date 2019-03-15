@@ -5,7 +5,7 @@ before_action :logged_in?, only: [:new, :edit, :destroy]
 def index
   @posts = Post.all
   @search = Post.ransack(params[:q])
-  @posts = @search.result
+  @posts = @search.result(distinct: true)
 end
 
 def new
