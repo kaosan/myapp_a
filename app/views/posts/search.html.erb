@@ -1,15 +1,7 @@
 <p>検索</p>
-<%= form_tag(posts_path, :method => 'get') do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag '検索', :name => nil %>
-<% end %>
+<%= search_from_for @search do |f| %>
+<%= f.label :content_cont, "投稿内容を含む" %>
+<%= f.search_field :content_cont %>
 
-<ul>
-  <% @posts.each do |post| %>
-  <li>
-    <%= image_tag post.image, class: 'img-responsive center-block' %>
-    <%= post.content %>
-    投稿者:<%= post.user.name %>
-    </li>
-    <% end %>
-  </ul>
+<%= f.submit "検索" %>
+<% end %>
