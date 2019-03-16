@@ -60,7 +60,7 @@ end
 def search
   @posts = Post.all
   @search = Post.ransack(params[:q])
-  @posts = @search.result(distinct: true)
+  @posts = @search.result
 end
 
 private

@@ -62,3 +62,7 @@ gem 'mini_magick'
 gem 'letter_opener_web'
 
 gem 'ransack'
+
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
