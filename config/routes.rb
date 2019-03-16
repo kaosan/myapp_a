@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'posts/search'
 
+  resources :users, only: [:index]
+  resources :relationships, only: [:create, :destroy]
+
   resources :contacts
   root to: 'posts#top'
   resources :favorite_posts, only:[:create, :destroy, :index]

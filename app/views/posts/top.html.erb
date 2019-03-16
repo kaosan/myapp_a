@@ -21,6 +21,14 @@
   </li>
   <br>
   <li>
+    <a><%= link_to '検索', posts_search_path %></a>
+    </li>
+    <br>
+    <li>
+      <a><%= link_to 'ユーザー一覧', users_path %></a>
+      </li>
+  <br>
+  <li>
     <a><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: 'a_botton' %></a>
   </li>
 <% else %>
