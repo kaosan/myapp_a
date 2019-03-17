@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
   get 'posts/search'
+  get 'users/following'
+  get 'users/followers'
 
   resources :users, only: [:index]
   resources :relationships, only: [:create, :destroy]

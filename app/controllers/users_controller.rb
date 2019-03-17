@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in?, only: [:show, :edit, :update, :favorite, :index]
+  before_action :logged_in?, only: [:show, :edit, :update, :favorite, :index, :following, :followers]
 def new
 @user = User.new
 end
@@ -33,6 +33,18 @@ end
 
 def index
   @users = User.all
+end
+
+def following
+    @user  = User.find(params[:id])
+    @users = @user.followings
+    render 'show_follow'
+end
+
+def followers
+  @user  = User.find(params[:id])
+  @users = @user.followers
+  render 'show_follower'
 end
 
 private
