@@ -7,4 +7,8 @@ class Post < ApplicationRecord
   has_many :favorite_post_users, through: :favorite_posts, source: :user
   has_many :comments, dependent: :destroy
 
+  def user
+    return User.find_by(id: self.user_id)
+  end
+
 end

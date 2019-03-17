@@ -38,6 +38,7 @@ end
 private
 
 def user_params
-params.require(:user).permit(:name, :email, :password, :password_confirmation, :icon, :icon_cache)
+params.require(:user).permit(:name, :email, :password, :password_confirmation, :icon, :icon_cache, :user_id)
 end
+
 end

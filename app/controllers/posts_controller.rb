@@ -15,7 +15,7 @@ def new
 end
 
 def create
-  @post = Post.new(post_params)
+  @post = Post.new(post_params, user_id: @current_user.id)
   @post.user_id = current_user.id
   if @post.save
     ContactMailer.contact_mail(@post).deliver
