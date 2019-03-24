@@ -6,8 +6,12 @@
 <li><%= link_to "編集", edit_user_path, class: 'botton' %></li>
 <br>
 <li><%= link_to "お気に入り", favorite_posts_path, class: 'b_botton' %></li>
-
-<% post.user.each do |post| %>
+<br>
+<li><%= link_to "フォロワー", following_user_path(@user) %></li>
+<h2>
+  <%= @user.name %>さんの投稿
+  </h2>
+<% @posts.each do |post| %>
   <div class="col-xs-12 col-md-6">
     <p><%= image_tag post.image, class: 'img-responsive center-block' %></p>
     <p><%= post.content %></p>

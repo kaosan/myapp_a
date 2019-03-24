@@ -15,8 +15,7 @@ def new
 end
 
 def create
-  @post = Post.new(post_params, user_id: @current_user.id)
-  @post.user_id = current_user.id
+  @post = current_user.posts.build(post_params)
   if @post.save
     ContactMailer.contact_mail(@post).deliver
     redirect_to posts_path, notice: '投稿し、投稿確認メールを送信しました'

@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
   get 'posts/search'
-  get 'users/following'
-  get 'users/followers'
 
   resources :users, only: [:index]
   resources :relationships, only: [:create, :destroy]
@@ -12,11 +10,18 @@ Rails.application.routes.draw do
   root to: 'posts#top'
   resources :favorite_posts, only:[:create, :destroy, :index]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :posts do
     resources :comments
     collection do
       post :confirm
     end
+  end
+  resources :conversations do
+    resources :messages
   end
 end
