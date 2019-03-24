@@ -37,14 +37,13 @@ class UsersController < ApplicationController
   end
 
   def following
-    binding.pry
-    @user  = User.find(params[:user_id])
-    @users = @user.followings
+    @user  = User.find(params[:id])
+    @users = @user.following
     render 'show_follow'
   end
 
   def followers
-    @user  = User.find(params[:user_id])
+    @user  = User.find(params[:id])
     @users = @user.followers
     render 'show_follower'
   end

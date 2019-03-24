@@ -3,11 +3,18 @@
 <h1><%= @user.name %>のページ</h1>
 <p><%= notice %></p>
 <br>
+<% if logged_in? %>
+<% if post.user_id == current_user.id %>
 <li><%= link_to "編集", edit_user_path, class: 'botton' %></li>
 <br>
 <li><%= link_to "お気に入り", favorite_posts_path, class: 'b_botton' %></li>
 <br>
-<li><%= link_to "フォロワー", following_user_path(@user) %></li>
+<li><%= link_to "フォロー", following_user_path(@user) %></li>
+<li>
+  <%= link_to "フォロワー", followers_user_path(@user) %>
+  </li>
+  <% end %>
+  <% end %>
 <h2>
   <%= @user.name %>さんの投稿
   </h2>
