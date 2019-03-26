@@ -5,12 +5,14 @@
 <h1>投稿詳細画面</h1>
 
 <p><%= image_tag @post.image.url, class: 'img-responsive center-block' %></p>
+<div class="rink">
+
 <p><%= @post.content %></p>
 <% unless @post.user_id == current_user.id %>
         <% if @favorite_post.present? %>
-          <%= link_to 'お気に入りを削除する', favorite_post_path(id: @favorite_post.id), method: :delete, class:'botton' %>
+          <li><a><%= link_to 'お気に入りを削除する', favorite_post_path(id: @favorite_post.id), method: :delete %></a></li>
         <% else %>
-          <%= link_to 'お気に入り', favorite_posts_path(post_id: @post.id), method: :post, class:'botton' %>
+          <li><a><%= link_to 'お気に入り', favorite_posts_path(post_id: @post.id), method: :post %></a></li>
         <% end %>
       <% end %>
       <br>
@@ -22,8 +24,11 @@
          </div>
           <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
           <%= render partial: 'comments/form', locals: {comment: @comment, post: @post} %>
-          <p><%= link_to '編集', edit_post_path(@post) %></p>
+          <br>
+          <br>
+          <br>
 
-      <%= link_to "投稿一覧画面に戻る", posts_path, class:'back_show' %>
+      <li><a><%= link_to "投稿一覧画面に戻る", posts_path, class:'back_show' %></a></li>
+</div>
 </div>
 </div>

@@ -1,6 +1,11 @@
+<div class ="t_menu">
+<div class="contants">
 <h1><%= @user.name %>さんのフォロワー</h1>
+<p>クリックすると相手のホームページへ移動します。</p>
 <ul>
 <% @user.followers.each do |user| %>
 <li><%= link_to "3user.name", user_path(user) %></li>
 <% end %>
 </ul>
+</div>
+</div>

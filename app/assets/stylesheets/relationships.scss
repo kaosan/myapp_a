@@ -1,3 +1,24 @@
-// Place all the styles related to the Relationships controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.t_menu{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.rink li a{
+  color: #ff99cc;
+}
+
+.rink li a:hover{
+  text-decoration: underline;
+}
+
+.botton{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background: #ffdbff;
+  color: #ff7fff;
+  border-bottom: solid 4px #ffd1ff;
+  border-radius: 3px;
+}

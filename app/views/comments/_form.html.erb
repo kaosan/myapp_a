@@ -1,4 +1,4 @@
-
+<div class ="t_menu">
   <%= form_with(model: [post, comment]) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
@@ -11,10 +11,11 @@
     </div>
     <% end %>
     <div class ="field" >
-       <%= form.label :content %>
+       <%= form.label :コメント %>
        <%= form.text_area :content %>
      </div>
      <div class ="actions" >
-        <%=form.submit "送信" %>
+        <%=form.submit "送信", class:'bottom' %>
       </div>
       <% end %>
+</div>

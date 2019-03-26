@@ -1,3 +1,125 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+  min-height: 100%;
+  position: relative;
+  background-color: #f5f5f5;
+}
+
+body{
+  margin-bottom: 60px;
+  padding-bottom: 0;
+  background-color: #f5f5f5;
+}
+
+.header{
+  height: 50px;
+  font-size: 1.5rem;
+  width: 100%;
+  background-color: #ff9ece;
+}
+
+.top_menu li{
+  float: left;
+  width: auto;
+}
+.top_menu li a{
+  color:#fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px;
+}
+.top_menu li a:hover{
+  text-decoration: underline;
+}
+ul.top_menu{
+  float: right;
+}
+
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.logo_image{
+  height: 50px;
+  margin: 0;
+  float: left;
+}
+
+h1{
+  color: #ff9e9e;
+}
+
+h2{
+  color:#ff9e9e;
+}
+
+h3{
+  color: #ff0e9e;
+}
+
+.img-responsive{
+  width: 350px;
+  height: 350px;
+  height: 30%;
+  width:auto;
+}
+
+#error_explanation{
+  color:red;
+}
+
+.contants{
+  overflow: scroll;
+}
+
+.t_menu{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.filed{
+  text-align: center;
+}
+
+.search{
+  margin-bottom: 10px;
+}
+
+.rink li a{
+  color: #ff99cc;
+}
+
+.rink li a:hover{
+  text-decoration: underline;
+}
+
+.botton{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background: #ffdbff;
+  color: #ff7fff;
+  border-bottom: solid 4px #ffd1ff;
+  border-radius: 3px;
+}
+
+.mx-auto{
+  width: 200px;
+  margin: 0 auto;
+}
+
+.top{
+  background-image: url("../images/old_misin.jpg")
+}

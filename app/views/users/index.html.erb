@@ -1,14 +1,23 @@
+<div class ="t_menu">
+<div class="contants">
+  <div class="rink">
 <h2>ユーザー</h2>
 <% @users.each do |user| %>
   <% if user.id != current_user.id %>
     <li>
       <div class="item">
         <%= link_to user.name, user %>
-        <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
+        <br>
+        <li><a><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %></a></li>
       </div>
     </li>
-    <li><%= render 'follow_form', user: user %></li>
+    <li><%= render 'follow_form', user: user %>
+    </li>
   <% end %>
 <% end %>
-
-<%= link_to "戻る", root_path %>
+<br>
+<br>
+<li><a><%= link_to "戻る", root_path %></a></li>
+</div>
+</div>
+</div>

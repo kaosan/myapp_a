@@ -1,20 +1,27 @@
+<div class="contants">
 <div class="container">
+  <div class ="t_menu">
 <br><%= image_tag @user.icon, class: 'icon' %>
 <h1><%= @user.name %>のページ</h1>
 <p><%= notice %></p>
 <br>
 <% if logged_in? %>
-<% if post.user_id == current_user.id %>
-<li><%= link_to "編集", edit_user_path, class: 'botton' %></li>
+<% if @user == current_user %>
+<div class="rink">
+
+<li><a><%= link_to "編集", edit_user_path %></a></li>
 <br>
-<li><%= link_to "お気に入り", favorite_posts_path, class: 'b_botton' %></li>
+<li><a><%= link_to "お気に入り", favorite_posts_path %></a></li>
 <br>
-<li><%= link_to "フォロー", following_user_path(@user) %></li>
+<% end %>
+<% end %>
+<li><a><%= link_to "フォロー", following_user_path(@user) %></a></li>
+<br>
 <li>
-  <%= link_to "フォロワー", followers_user_path(@user) %>
+  <a><%= link_to "フォロワー", followers_user_path(@user) %></a>
   </li>
-  <% end %>
-  <% end %>
+</div>
+
 <h2>
   <%= @user.name %>さんの投稿
   </h2>
@@ -24,4 +31,6 @@
     <p><%= post.content %></p>
     <% end %>
 
+</div>
+</div>
 </div>

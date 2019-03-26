@@ -1,17 +1,28 @@
-<p>検索</p>
+<div class="t_menu">
+<h1>検索</h1>
+<br>
 <p>
   内容に関する検索ができます。
   </p>
+  <br>
+  <div class="search">
  <%= search_form_for @search, url: posts_search_path do |f| %>
  <%= f.label :content_cont, "検索" %>
  <%= f.search_field :content_cont %>
- <%= f.submit "検索" %>
+ <%= f.submit "検索", class:'botton' %>
  <% end %>
+</div>
 <% if params[:q].present? && params[:q][:content_cont].present? %>
+<p>検索結果一覧</p>
 <% @posts.each do |post| %>
  <p><%= image_tag post.image.url, class: 'img-responsive center-block' %></p>
  <p><%= post.content %></p>
  <p> 投稿者:<%= post.user.name %></p>
   <% end %>
   <% end %>
-  <%= link_to "戻る", root_path %>
+  <br>
+  <div class="rink">
+
+  <li><a><%= link_to "戻る", root_path %></a></li>
+</div>
+</div>

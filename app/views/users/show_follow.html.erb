@@ -1,6 +1,11 @@
+<div class ="t_menu">
+<div class="contants">
 <h1><%= @user.name %>さんのフォロー</h1>
+<p>クリックすると、相手のページへ移動します。</p>
 <ul>
 <% @user.following.each do |user| %>
 <li><%= link_to "#{user.name}", user_path(user) %></li>
 <% end %>
 </ul>
+</div>
+</div>

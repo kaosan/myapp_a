@@ -1,5 +1,6 @@
 <div class = "container">
-
+<div class="contants">
+<div class ="t_menu">
 <%= form_with(model: @user, local: true ,url: new_or_edit ) do |form| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -41,7 +42,11 @@
 </div>
 </div>
 <br>
-  <%= form.submit "編集", class: 'a_botton' %>
-  <%= link_to "戻る", user_path, class: 'b_botton' %>
+  <%= form.submit "編集", class: 'botton' %>
+  <br>
+  <br>
+  <%= link_to "戻る", user_path %>
 <% end %>
+</div>
+</div>
 </div>
