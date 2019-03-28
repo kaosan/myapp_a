@@ -1,52 +1,13 @@
 <div class = "contants">
-  <div class="top">
-
+<div class="top_msg">
   <div class = "t_menu">
-<h1>Top</h1>
-<br>
-<br>
-<% if logged_in? %>
-<li>
-  <a><%= link_to "マイページ", user_path(current_user.id), class: 'a_botton' %></a>
-  </li>
-  <br>
-  <li>
-    <a><%= link_to "投稿一覧", posts_path, class: 'b_botton' %></a>
-  </li>
-  <br>
-  <li>
-    <a><%= link_to '投稿画面へ', new_post_path, class: 'a_botton' %></a>
-  </li>
-  <br>
-  <li>
-    <a><%= link_to 'お気に入り', favorite_posts_path, class: 'b_botton' %></a>
-  </li>
-  <br>
-  <li>
-    <a><%= link_to '検索', posts_search_path %></a>
-    </li>
+    <h1>Wellcome to Calor</h1>
     <br>
-    <li>
-      <a><%= link_to 'ユーザー一覧', users_path %></a>
-      </li>
-  <br>
-  <li>
-    <a><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: 'a_botton' %></a>
-  </li>
-<% else %>
-<br>
-<li>
-  <a><%= link_to "投稿一覧", posts_path, class: 'b_botton' %></a>
-  </li>
-  <br>
-  <li>
-    <a><%= link_to "登録", new_user_path, class: 'b_botton' %></a>
-  </li>
-  <br>
-  <li>
-    <a><%= link_to "ログイン", new_session_path, class: 'a_botton' %></a>
-  </li>
-<% end %>
+    <br>
+
+    <p>Calorは、ハンドメイド作品の共有、相互アドバイスのためのコミュニティです。</p>
+    <p>ここでは作品を誰でも投稿することができます。</p>
+    <p>あなたも作品を作る楽しさに加え、作品を披露する楽しさも体験しませんか。</p>
 </div>
 </div>
 </div>
