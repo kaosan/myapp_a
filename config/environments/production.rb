@@ -91,4 +91,6 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener_web
 
+  config.action_mailer.default_url_options = { host: 'https://obscure-dawn-63602.herokuapp.com/'}
+
 end
