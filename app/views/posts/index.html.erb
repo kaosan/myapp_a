@@ -8,24 +8,23 @@
         <p><%= image_tag post.image, class: 'img-responsive center-block' %></p>
         <p><%= post.content %></p>
         <p> 投稿者:<%= post.user.name %></p>
-        <div class="rink">
 
-        <span><li><a><%= link_to '詳細', post_path(post.id) %></a></li></span>
+        <span><li><a><%= link_to '詳細', post_path(post.id), class:'rink_a' %></a></li></span>
 
         <% if logged_in? %>
           <% if post.user_id == current_user.id %>
-            <span><li><a><%= link_to '編集', edit_post_path(post.id), data: {confirm: '本当に編集しますか？'} %></a></li></span>
-            <span><li><a><%= link_to '削除', post_path(post.id),method: :delete, data: {confirm: '本当に削除しますか？'} %></a></li></span>
+            <span><li><a><%= link_to '編集', edit_post_path(post.id), data: {confirm: '本当に編集しますか？'}, class:'rink_a' %></a></li></span>
+            <span><li><a><%= link_to '削除', post_path(post.id),method: :delete, data: {confirm: '本当に削除しますか？'}, class:'rink_a' %></a></li></span>
 <br>
 <br>
 <br>
           <% end %>
         <% end %>
+  </div>
     <% end %>
+  </div>
+  </div>
 <br>
 <li><a><%= link_to '新しく投稿する', new_post_path %></a></li>
-</div>
-</div>
-</div>
-</div>
+
 </div>
