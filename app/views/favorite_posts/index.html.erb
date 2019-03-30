@@ -4,7 +4,7 @@
 <h1>お気に入り一覧</h1>
   <% @user.favorite_post_images.each do |post| %>
     <br>投稿者:<%= post.user.name %>
-    <br><%= image_tag post.image, class: 'img-responsive' %>
+    <br><%= image_tag post.image, class: 'img-responsive center-block' %>
     <br>コメント:<%= post.content %>
     <% end %>
     <div class="rink">
