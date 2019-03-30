@@ -28,6 +28,7 @@ def show
   @favorite_post = current_user.favorite_posts.find_by(post_id: @post.id)
   @comments = @post.comments
   @comment = @post.comments.build
+  render layout: 'user_show'
 end
 
 def edit
