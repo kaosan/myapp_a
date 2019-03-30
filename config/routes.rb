@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   resources :contacts
-  root to: 'posts#top'
+  root to: 'top#top'
   resources :favorite_posts, only:[:create, :destroy, :index]
   resources :sessions, only: [:new, :create, :destroy]
   resources :users do
