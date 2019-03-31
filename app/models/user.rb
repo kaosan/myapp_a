@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   validates :password, presence: true, length: {minimum: 6}
   has_many :posts, dependent: :destroy
-  
+
   has_many :favorite_posts, dependent: :destroy
   has_many :favorite_post_images, through: :favorite_posts, source: :post
 
@@ -29,4 +29,4 @@ class User < ApplicationRecord
   def unfollow!(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
-  end
+end

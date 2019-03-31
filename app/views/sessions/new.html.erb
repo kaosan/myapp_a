@@ -2,15 +2,23 @@
 <div class ="t_menu">
 <h1>ログイン</h1>
 <br>
+<div class="user_table">
+<table class = "user_form">
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+<tr>
 <div class ="login">
-<%= f.label :メールアドレス %>
-<%= f.email_field :email %>
+<th><%= f.label :メールアドレス %></th>
+<th><%= f.email_field :email %></th>
 </div>
+</tr>
 <br>
+<tr>
 <div class="login">
-<%= f.label :パスワード %>
-<%= f.password_field :password %>
+<th><%= f.label :パスワード %></th>
+<th><%= f.password_field :password %></th>
+</div>
+</tr>
+</table>
 </div>
 <br>
 <%= f.submit "ログイン", class: 'botton' %>

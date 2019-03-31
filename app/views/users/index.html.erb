@@ -5,6 +5,7 @@
 <% @users.each do |user| %>
   <% if user.id != current_user.id %>
       <div class="item">
+        <li><a><%= image_tag user.icon, class: 'icon' %></a></li>
         <li><a><%= link_to user.name, user %></a></li>
         <li><a><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %></a></li>
       </div>

@@ -12,33 +12,50 @@
     </ul>
   </div>
 <% end %>
+<div class="user_table">
+<table class = "user_form">
 
 <%= form_with(model: @user, local: true) do |f| %>
+<tr>
 <div class="sin_up">
-  <%= f.label :名前 %>
-  <%= f.text_field :name %>
+  <th><%= f.label :名前 %></th>
+  <th><%= f.text_field :name %></th>
+</div>
+</tr>
+<br>
+
+<tr>
+<div class="sin_up">
+  <th><%= f.label :メールアドレス %></th>
+  <th><%= f.email_field :email %></th>
+</div>
+</tr>
+
+<br>
+<tr>
+<div class="sin_up">
+  <th><%= f.label :パスワード %></th>
+  <th><%= f.password_field :password %></th>
+</div>
+</tr>
+
+<br>
+<tr>
+<div class="sin_up">
+  <th><%= f.label :同じパスワードを入力 %></th>
+  <th><%= f.password_field :password_confirmation %></th>
+</div>
+</tr>
+</table>
 </div>
 <br>
-<div class="sin_up">
-  <%= f.label :メールアドレス %>
-  <%= f.email_field :email %>
-</div>
-<br>
-<div class="sin_up">
-  <%= f.label :パスワード %>
-  <%= f.password_field :password %>
-</div>
-<br>
-<div class="sin_up">
-  <%= f.label :同じパスワードを入力 %>
-  <%= f.password_field :password_confirmation %>
-</div>
-<br>
+<div class="user_edit">
 <div class = "field">
   <div class ="mx-auto" style ="width: 200px;">
   <%= f.label :ユーザー画像 %>
   <%= image_tag(@user.icon.url, class: 'icon') if @user.icon.url %>
   <%= f.file_field :icon %>
+  </div>
   </div>
   </div>
   <br>
