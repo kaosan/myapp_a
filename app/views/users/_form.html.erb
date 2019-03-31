@@ -13,36 +13,52 @@
       </ul>
     </div>
   <% end %>
+<table class = "user_form">
+<tr>
 
+<div class="user_edit" >
+<th><%= form.label :名前 %></th>
+<th><%= form.text_field :name %></th>
+  </div>
+</tr>
+<br>
+<tr>
 
 <div class="user_edit" >
-  <%= form.label :名前 %>
-  <%= form.text_field :name %>
+<th><%= form.label :メールアドレス %></th>
+<th><%= form.email_field :email %></th>
   </div>
+</tr>
 <br>
+<tr>
+
 <div class="user_edit" >
-  <%= form.label :メールアドレス %>
-  <%= form.email_field :email %>
+<th><%= form.label :パスワード %></th>
+<th><%= form.password_field :password %></th>
   </div>
+</tr>
 <br>
+<tr>
+
 <div class="user_edit" >
-  <%= form.label :パスワード %>
-  <%= form.password_field :password %>
+<th><%= form.label :同じパスワードを入力 %></th>
+<th><%= form.password_field :password_confirmation %></th>
   </div>
+</tr>
+</table>
 <br>
-<div class="user_edit" >
-  <%= form.label :同じパスワードを入力 %>
-  <%= form.password_field :password_confirmation %>
-  </div>
-<br>
+
 <div class="user_edit" >
   <div class ="mx-auto" style ="width: 200px;">
   <%= form.label :ユーザー画像 %>
   <%= form.file_field :icon %>
+  </div>
 </div>
-</div>
+
 <br>
-  <%= form.submit "編集", class: 'botton' %>
+
+  <%= form.submit "登録", class: 'botton' %>
+
   <br>
   <br>
   <%= link_to "戻る", user_path %>
