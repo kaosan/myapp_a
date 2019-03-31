@@ -16,7 +16,7 @@
               <i class="right triangle icon"></i>
 
               <%= message.body %>
-              /
+              
               <% if message.user == current_user %>
                 <%= message.read ? '既読' : '未読' %>
               <% end %>
