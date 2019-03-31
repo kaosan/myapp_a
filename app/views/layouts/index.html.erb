@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calor</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
+  </head>
+
+  <body>
+    <header class="header">
+<nav class="menu">
+  <li><%= image_tag 'Calor-logo.png', class: 'logo_image' %></li>
+  <ul class="top_menu clearfix">
+    <li>
+      <a><%= link_to "top", root_path %></a>
+    </li>
+
+    <% if logged_in? %>
+    <li>
+      <a><%= link_to "マイページ", user_path(current_user.id) %></a>
+      </li>
+      <li>
+        <a><%= link_to '投稿画面へ', new_post_path %></a>
+      </li>
+      <li><a><%= link_to '検索', posts_search_path %></a></li>
+      <li><a><%= link_to 'ユーザー一覧', users_path %></a></li>
+      <li>
+        <a><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></a>
+      </li>
+    <% else %>
+      <li>
+        <a><%= link_to "登録", new_user_path %></a>
+      </li>
+      <li>
+        <a><%= link_to "ログイン", new_session_path %></a>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+</header>
+
+    <%= yield %>
+  </body>
+</html>

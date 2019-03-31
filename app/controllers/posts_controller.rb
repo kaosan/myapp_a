@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    render layout: 'index'
   end
 
   def new
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
     else
       @post = Post.new
     end
+    render layout: 'new'
   end
 
   def create
@@ -61,6 +63,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @search = Post.ransack(params[:q])
     @posts = @search.result
+    render layout: 'search'
   end
 
   private

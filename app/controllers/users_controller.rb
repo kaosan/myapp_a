@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in?, only: [:show, :edit, :update, :favorite, :index, :following, :followers]
   def new
     @user = User.new
+    render layout: 'users_new'
   end
 
   def create
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    
+    render layout: 'users'
   end
 
   def following
