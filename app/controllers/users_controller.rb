@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @favorite_posts_images = @user.favorite_posts
     @posts = @user.posts
+    render layout: 'user_show'
   end
 
   def edit

@@ -22,10 +22,6 @@
   text-decoration: underline;
 }
 
-.msg_user{
-  background-color: #ffd6ea
-}
-
 .botton{
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -57,10 +53,17 @@
 .user_form th{
     width: 150px;
     height: 7rem;
-    text-align: right;
+    color: #ff8989;
 }
 
 .user_form tr{
     height: 7rem;
     width: 150px;
+}
+
+.user_table{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
