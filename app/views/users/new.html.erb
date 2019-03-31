@@ -1,6 +1,7 @@
 <div class ="t_menu">
 <div class="contants">
 <h3>プロフィール登録</h3>
+<p><%= notice %></p>
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %>

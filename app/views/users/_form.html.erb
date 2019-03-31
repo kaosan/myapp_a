@@ -1,6 +1,7 @@
 <div class = "container">
 <div class="contants">
 <div class ="t_menu">
+  <p><%= notice %></p>
 <%= form_with(model: @user, local: true ,url: new_or_edit ) do |form| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
